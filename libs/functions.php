@@ -1,4 +1,18 @@
 <?php
+/**
+ * 2LinesAds - simple text ads system (without banners)
+ *
+ * functions
+ *
+ * This is a simple ads system without banners that I've wrote long ago ...
+ * It is in it's early stages of development. Feel free to fork and upgrade it.
+ *
+ *
+ * @author    Marko Milost <mclion@gmail.com>
+ * @copyright (c) 2006-2012 by Marko Milost / mclion
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ * @version 0.2
+ */
 	 
 
 function check_ip($ip, $cookie, $add_id, $event_time, $event_timeout, $event_type, $word='')
