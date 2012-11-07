@@ -1,0 +1,642 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"On",
+				"on"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"_",
+				"_FILES"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"_S",
+				"_SESSION  (variable)"
+			],
+			[
+				"user",
+				"userlog"
+			],
+			[
+				"fan",
+				"fan_page"
+			],
+			[
+				"page",
+				"page_out"
+			],
+			[
+				"promot",
+				"promoter_phone"
+			],
+			[
+				"promo",
+				"promoter_email"
+			],
+			[
+				"ass",
+				"assign"
+			],
+			[
+				"sess",
+				"session_destroy"
+			],
+			[
+				"ine",
+				"insert_values"
+			],
+			[
+				"insert",
+				"insert_values"
+			],
+			[
+				"inser",
+				"insert_values"
+			],
+			[
+				"font-",
+				"font-size:   (property)"
+			],
+			[
+				"votes",
+				"votes_list"
+			],
+			[
+				"itera",
+				"iterator_to_array"
+			],
+			[
+				"vote",
+				"voted_id"
+			],
+			[
+				"glas",
+				"glasovanje"
+			],
+			[
+				"boot",
+				"bootstrap"
+			],
+			[
+				"s",
+				"src"
+			],
+			[
+				"sig",
+				"signedrequest"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"signed",
+				"signed_request"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"_SE",
+				"_SERVER  (variable)"
+			],
+			[
+				"true",
+				"true"
+			],
+			[
+				"file_",
+				"file_get_contents"
+			],
+			[
+				"link",
+				"link_list"
+			],
+			[
+				"i",
+				"format_bitrate  (function)"
+			],
+			[
+				"str_",
+				"str_replace"
+			],
+			[
+				"strt",
+				"strtr"
+			],
+			[
+				"id",
+				"id_list"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"is",
+				"is_array"
+			],
+			[
+				"strr",
+				"str_replace"
+			],
+			[
+				"fpu",
+				"file_put_contents"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"event",
+				"event_list"
+			],
+			[
+				"marker",
+				"marker"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<html>\n<head>\n	<title>Demo of 2linesads</title>\n</head>\n<body>\n<div class=\"container\">\n	<div class=\"header\">Some text</div>\n	<div class=\"body\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>\n	<div class=\"footer\">Some other text</div>\n</div>\n<script type=\"text/javascript\"></script>\n</body>\n</html>",
+			"file": "demo.html",
+			"file_size": 707,
+			"file_write_time": 1351992188000000,
+			"settings":
+			{
+				"buffer_size": 707,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 137.0,
+		"selected_items":
+		[
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"projec",
+				"Project: Edit"
+			],
+			[
+				"proje",
+				"Project: Add Folder"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packs",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"snipp",
+				"Snippet: html"
+			],
+			[
+				"snipp swit",
+				"Snippet: switch …"
+			],
+			[
+				"snippet",
+				"Snippet: html"
+			],
+			[
+				"package",
+				"Package Control: Add Repository"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"Format: Php"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"Package Control: s",
+				"Package Control: List Packages"
+			],
+			[
+				"lint",
+				"SublimeCodeIntel: Reset"
+			]
+		],
+		"width": 588.0
+	},
+	"console":
+	{
+		"height": 122.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Settings/SideBarEnhancements.json",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/AdvancedNewFile/README.md",
+		"/Users/mclion/Dev/podpalmo_si/modules/rsswrite/rsswrite.php",
+		"/Volumes/megabob/var/www/2linesads/keywords.js",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/page_2.html",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/test.html",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/JsMinifier/Minifier.sublime-settings",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/emmet-sublime/Emmet.sublime-settings",
+		"/Volumes/megabob/var/www/2linesads/keywords.min.js",
+		"/Volumes/megabob/var/www/2linesads/2linesads.min.js",
+		"/Volumes/megabob/var/www/2linesads/cv.php",
+		"/Volumes/megabob/var/www/2linesads/libs/init.php",
+		"/Volumes/megabob/var/www/2linesads/admin/index.php",
+		"/Volumes/megabob/var/www/2linesads/2linesads.js",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/Phpcs/phpcs.sublime-settings",
+		"/Volumes/megabob/var/www/2linesads/cs.php",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/User/PHP.sublime-settings",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/main.html",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Volumes/megabob/var/www/najboljsi_sosed/index.php",
+		"/Volumes/megabob/var/www/2linesads/keywords.php",
+		"/Volumes/megabob/var/www/2linesads/tadder_loader.php",
+		"/Volumes/megabob/var/www/2linesads/go.php",
+		"/Volumes/megabob/var/www/2linesads/keylist.php",
+		"/Volumes/megabob/var/www/2linesads/tadder_loader.php~",
+		"/Volumes/megabob/var/www/2linesads/userlist.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/rules.html",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/new_neighbour.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/libs/fbsession.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/page_2.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/page_1.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/new_neighbour.html",
+		"/Volumes/megabob/var/www/najboljsi_sosed/config.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/navigation.html",
+		"/Volumes/megabob/var/www/najboljsi_sosed/libs/functions.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/admin.html",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/rules.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/vote.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/libs/fb/base_facebook.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/admin.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/edit_neighbour.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/assets/css/bootstrap.css",
+		"/Volumes/megabob/var/www/novicev/libs/functions.php",
+		"/Users/mclion/Downloads/wfl-me-sl.txt",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/page_1.html",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/shared.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/pages/list.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/assets/js/bootstrap-modal.js",
+		"/Volumes/megabob/var/www/novicev/libs/utils/parse.news.php",
+		"/Volumes/megabob/var/www/novicev/libs/utils/score.news.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/assets/css/font-awesome.css",
+		"/Volumes/megabob/var/www/najboljsi_sosed/assets/css/font-awesome-ie7.css",
+		"/Volumes/megabob/var/www/najboljsi_sosed/assets/js/library.js",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Volumes/megabob/var/www/najboljsi_sosed/templates/tmp/main.57c9bfb63cf19137c604a30aee9183c3.rtpl.php",
+		"/Volumes/megabob/var/www/najboljsi_sosed/libs/phpthumb/phpthumb.class.php",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/utils/scoring.rss_news.php",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/ZunanjeNovice/ZunanjeNovice.php",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/rss_news/rss_news.html",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/config.inc",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/home/home.html",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/home/home.php",
+		"/Volumes/megabob/var/www/mcturbosite/index.php",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/main/main.html",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/modules/main/main.php",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/css/main.css",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/min/groupsConfig.php",
+		"/Volumes/megabob/var/www/mcturbosite/sites/podpalmo_si/min/config.php",
+		"/Volumes/enigma/home/www/turbosite/sites/podpalmo_si/modules/news2/news_single.html",
+		"/Volumes/enigma/home/www/turbosite/sites/podpalmo_si/modules/news2/news2.html",
+		"/Volumes/megabob/var/www/updater/index.php",
+		"/Volumes/enigma/home/www/turbosite/sites/podpalmo_si/modules/rsswrite/rsswrite.php",
+		"/Users/mclion/Downloads/thomasdavis-backbonetutorials-9651387/examples/nodejs-mongodb-mongoose-restify/config.js",
+		"/Users/mclion/Downloads/thomasdavis-backbonetutorials-9651387/examples/nodejs-mongodb-mongoose-restify/js/collections/messages.js",
+		"/Users/mclion/Downloads/thomasdavis-backbonetutorials-9651387/examples/nodejs-mongodb-mongoose-restify/js/models/message.js",
+		"/Users/mclion/Downloads/thomasdavis-backbonetutorials-9651387/examples/nodejs-mongodb-mongoose-restify/index.html",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/modules/documents/documents_class.php",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/DEADJOE",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/scriptor/documents/documents.php",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/sites/posavje_si/scriptor/superdocs/events_config.php",
+		"/Users/mclion/Dev/geonagrada/model/kissmvc_core.php",
+		"/Users/mclion/Dev/geonagrada/api.txt",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/sites/podpalmo_si/modules/news/news.html",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/sites/podpalmo_si/modules/news/news_table.html",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/sites/podpalmo_si/modules/news/news_single.html",
+		"/Volumes/mazinga/opt/data/htdocs/turbosite/sites/posavje_si/modules/main/main.html",
+		"/Users/mclion/Sites/goauth/tchotchke/war/VideoWidget.jsp",
+		"/Volumes/megabob/var/www/kliknidobi/sqlite.class.php",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/Default/Global.sublime-settings",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/Base File.sublime-settings",
+		"/Volumes/megabob lokalno/var/www/kliknidobi/index.php",
+		"/Users/mclion/Dev/parsers/volitve2010_udelezba.html",
+		"/Users/mclion/Dev/parsers/events.json",
+		"/Users/mclion/Dev/parsers/YTapitest.php",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Base File.sublime-settings",
+		"/Users/mclion/Library/Application Support/Sublime Text 2/Packages/Default/Base File.sublime-settings",
+		"/Volumes/megabob lokalno/var/www/kliknidobi/sqliteupdate.php",
+		"/Volumes/megabob lokalno/var/www/kliknidobi/channel.php",
+		"/Volumes/megabob lokalno/var/www/kliknidobi/library.js"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Volumes/megabob/var/www/2linesads",
+			"/Volumes/megabob/var/www/najboljsi_sosed",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"feed",
+			"enter",
+			"err:",
+			"txt_keywords",
+			"txt_adds",
+			"include/",
+			"v primeru",
+			"www",
+			"tvojem",
+			"tvoj",
+			"CURLOPT_CONNECTTIMEOUT",
+			"margin",
+			"igra se za",
+			"canvas",
+			"users",
+			"->users",
+			"\"",
+			"admin",
+			"signed_request",
+			"]",
+			"[",
+			"modal",
+			"mongoid",
+			"overflow",
+			"input with error",
+			"input",
+			"admin",
+			"font/",
+			"'../",
+			"var_dump",
+			"getUserAccessToken",
+			"getsigned",
+			"getSignedRequest",
+			"signed_request",
+			"signed",
+			"fb.init",
+			"\"../",
+			"../",
+			"js",
+			"novice",
+			"slow",
+			"disable",
+			"Titillium Web",
+			"tilli",
+			"background-color",
+			" body",
+			"body",
+			".body",
+			"body",
+			"font-family",
+			"font",
+			"DROP INDEX (.*) ON documents;",
+			"zdravnik",
+			"moj zdravnik",
+			"mcturbsite",
+			"url(/sites/",
+			"basedir",
+			"newscontent",
+			"content",
+			"../assets/",
+			"strip_tags(",
+			"strip_tags\\(.*,.*\\)",
+			"strip_tags",
+			"submit",
+			"<?",
+			"position",
+			"geoposition",
+			"buzz",
+			"&nbsp;",
+			"%",
+			"<br /><br />",
+			"header"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"2lines_keywords",
+			"2linesads",
+			"libs/",
+			"'",
+			"\"",
+			"fonts/",
+			"'assets/",
+			"\"",
+			"",
+			"Duru Sans",
+			"ALTER TABLE documents DROP INDEX $1;",
+			"mcturbosite",
+			"url(/mcturbosite/sites/",
+			"/updater/",
+			" ",
+			" %",
+			"</p><p>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "demo.html",
+					"settings":
+					{
+						"buffer_size": 707,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								707,
+								707
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"zen_abbrev_cache":
+							[
+								"script",
+								"<script type=\"text/javascript\">${1001:$SELECTION}</script>"
+							]
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.php_beautifier_errors":
+	{
+		"height": 102.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"page",
+				"pages/page_1.php"
+			],
+			[
+				"",
+				"Package Control Messages"
+			],
+			[
+				"index",
+				"ProTvit/app/index.coffee"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true
+}
