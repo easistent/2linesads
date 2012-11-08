@@ -16,7 +16,12 @@ I wrote this in 2006, used it on a production site for about two years then forg
 Installation
 ------------
 
-1. Create a DB and import the file 2linesads.sql into it. 
+### Requirements
+* PHP 4+
+* MySQL 4+ with Innodb support enabled
+
+
+1. Create a mysql database and import the file 2linesads.sql into it. 
 2. Put your ads in the table 2linesads. There is no admin for editing data, just a very crude one for viewing stats.
 3. In the part of the page you want to insert the ads, put a div with the id "body_content", so the javascript will know where to look.
 4. At the end of your HTML, before the body, put this code:
@@ -25,6 +30,26 @@ Installation
 ```
 
 Look at the demo.html file for an example. Also there is a **[live demo](http://mclion.tuinzdaj.net/2linesads/demo.html "live demo")** available.
+
+Usage
+-----
+
+Put your ads in the table 2linesads in your mysql database.
+
+**Columns:**
+* **userid** At the moment has to be 1, it is planned to have different users (=sites) in the future...
+* **title** The title that will be shown in the ad.
+* **description** Long text under the title.
+* **url** URL to link to.
+* **picture** URL of picture to display. Has to be resized and uploaded manually at the moment.
+* **keyword** Keywords, divided by |, like word1|word2|word3
+* **campaignstart** Start date of campaign.
+* **campaignend** End date of campaign.
+* **adclicks** The humber of clicks to serve.
+* **views** and **clicks** are updated as the visitor views or clicks the ad.
+
+You can view the stats in SITE_URL/admin/ or in your database. An example of the crude admin **[can be seen here](http://mclion.tuinzdaj.net/2linesads/admin/)**.
+
  
 Considerations
 --------------
@@ -32,6 +57,9 @@ Considerations
 This was written in 2006, in another time, as to speak. It's not good code, especially the javascript bit, because at at least two points is not async, so it could stop the rendering of the page or any other javascript action.
 
 Also the code is not enclosed and uses global variables, so be warned. 
+
+Oh, another thing. The Admin is not secured in any way. At the moment is only a view stats thing anyway. If you don't want others to see the view and click stats you'll have to secure it with .htacces or in some other way.
+
 
 I will rewrite it if there will be enough interest or you can do it yourself. The fork button is up there. :)
 
