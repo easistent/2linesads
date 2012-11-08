@@ -12,15 +12,13 @@ You can see how it looks here in the image below:
 
 I wrote this in 2006, used it on a production site for about two years then forgot about it. I've found the code in an old backup of a backup and decided to open-source it under the MIT license. The code is mostly the same as I wrote in 2006, with some comments added and some debug code deleted. I did only one upgrade. The old code had an ugly hack to pass data from the database via PHP to the javascript. I've replaced it with JSON, even if it's not supported until IE8, but nowadays it should not be a problem, as it was in 2006.
 
-
-Installation
+Requirements
 ------------
-
-### Requirements
 * PHP 4+
 * MySQL 4+ with Innodb support enabled
 
-
+Installation
+------------
 1. Create a mysql database and import the file 2linesads.sql into it. 
 2. Put your ads in the table 2linesads. There is no admin for editing data, just a very crude one for viewing stats.
 3. In the part of the page you want to insert the ads, put a div with the id "body_content", so the javascript will know where to look.
@@ -33,7 +31,6 @@ Look at the demo.html file for an example. Also there is a **[live demo](http://
 
 Usage
 -----
-
 Put your ads in the table 2linesads in your mysql database.
 
 **Columns:**
