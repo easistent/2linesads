@@ -23,7 +23,8 @@ Installation
 2. Put your ads in the table 2linesads. There is no admin for editing data, just a very crude one for viewing stats.
 3. In the part of the page you want to insert the ads, put a div with the id "body_content", so the javascript will know where to look.
 4. At the end of your HTML, before the body, put this code:
-```javascript
+
+```html
 <script type="text/javascript" id="2linesads">
 (function() {
 function async_load(){
