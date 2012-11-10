@@ -14,7 +14,7 @@
  */
 
 // URL of the installation
-var server_url = 'http://McLion.tuinzdaj.net/2linesads/';
+var serverUrl = "http://mclion.tuinzdaj.net/2linesads/";
 
 /**
  * Util functions
@@ -32,9 +32,9 @@ function createRequestObject() {
 
 // Send request
 function getPhrases() {
-    http.open('GET', server_url + '2linesads_loader.php',false);
+    http.open('GET', serverUrl + '2linesads_loader.php', false);
     http.send();
-    if( http.readyState == 4 && http.status == 200 ) {
+    if(http.readyState == 4 && http.status == 200) {
 			return http.responseText;
 	}
    
@@ -59,17 +59,17 @@ function getRealLeft(oElement) {
 }
 
 // Just for IE
-function array_indexof(arr_var, str_var) {
-	if(arr_var.indexOf) {
-		if(arr_var.indexOf(str_var) != -1) {
+function arrayIndexOf(arrVar, strVar) {
+	if(arrVar.indexOf) {
+		if(arrVar.indexOf(strVar) != -1) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	for(i = 0; i < arr_var.length; i++) {
-		if(arr_var[i] == str_var) {
+	for(i = 0; i < arrVar.length; i++) {
+		if(arrVar[i] == strVar) {
 			return true;
 		}
 	}
@@ -79,19 +79,19 @@ function array_indexof(arr_var, str_var) {
 
 function resetTimeout() {
 	try {
-		if(m_ID) {
-			window.clearTimeout(m_ID);
-			delete m_ID; // Works because it was not declared with a value
+		if(mID) {
+			window.clearTimeout(mID);
+			delete mID; // Works because it was not declared with a value
 		}
 	} catch(ex) {}
 }
 
 function startTimeout(timeOut) {
-	if(m_ID <= 0) {
+	if(mID <= 0) {
 		//debugger;
 	} else {
-		window.clearTimeout(m_ID);
-		m_ID = window.setTimeout('document.getElementById(\'addbox\').style.visibility=\'hidden\';', 2000);
+		window.clearTimeout(mID);
+		mID = window.setTimeout("document.getElementById(\"adBox\").style.visibility=\"hidden\";", 2000);
 	}
 }
 
@@ -102,7 +102,7 @@ function doHighlight(bodyText, searchTerm, highlightStartTag, highlightEndTag, u
 	var loop = 0;
 	var counter = 0;
 
-	if(array_indexof(basket, userID) === true) {
+	if(arrayIndexOf(basket, userID) === true) {
 		return bodyText;
 	}
 
@@ -113,7 +113,7 @@ function doHighlight(bodyText, searchTerm, highlightStartTag, highlightEndTag, u
 		basket = basket.concat(userID);
 		counter++;
 
-		tmp_count += counter;
+		tmpCount += counter;
 		return newText;
 	} else {
 		return bodyText;
@@ -129,16 +129,16 @@ function highlightSearchTerms(searchText, bannerTitle, bannerDesc, bannerURL, ba
 	// Change with the element id you wish to scan
 	if(document.getElementById("body_content")) {
 		var bodyText = document.getElementById("body_content").innerHTML + ' '; // the space is needed for searching for the last element
-		if(searchText.indexOf('|') > 0) {
-			var searchLoop = searchText.split('|');
+		if(searchText.indexOf("|") > 0) {
+			var searchLoop = searchText.split("|");
 			for(var xx = 0; xx < searchLoop.length; xx++) {
-				addboxID = 'addboxT_' + encodeURI(searchLoop[xx].toLowerCase());
-				highlightStartTag = '<img src="' + server_url + 'cs.php?id=' + userID + '&adWord=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + addboxID + '" onmouseover="dotxtad(\'' + addboxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
+				adBoxID = "adBoxT_" + encodeURI(searchLoop[xx].toLowerCase());
+				highlightStartTag = '<img src="' + serverUrl + 'cs.php?id=' + userID + '&adWord=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
 				bodyText = doHighlight(bodyText, searchLoop[xx], highlightStartTag, highlightEndTag, userID);
 			}
 		} else {
-			addboxID = 'addboxT_' + encodeURI(searchText.toLowerCase());
-			highlightStartTag = '<span id="' + addboxID + '" onmouseover="dotxtad(\'' + addboxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchText + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
+			adBoxID = "adBoxT_" + encodeURI(searchText.toLowerCase());
+			highlightStartTag = '<span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchText + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
 			bodyText = doHighlight(bodyText, searchText, highlightStartTag, highlightEndTag, userID);
 		}
 
@@ -163,59 +163,91 @@ function searchPhrases(searchArray) {
 function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
 	// create DIV
 	var linkID = document.getElementById(adID);
-	var boxID = document.getElementById('addbox');
-	var humanURL, tmp_html;
+	var boxID = document.getElementById("adBox");
+	var humanURL, tmpHtml;
 
-	boxID.style.left = 10 + 'px';
-	boxID.style.top = 10 + 'px';
-	boxID.style.width = 250 + 'px';
-	boxID.style.visibility = '';
+	boxID.style.left = 10 + "px";
+	boxID.style.top = 10 + "px";
+	boxID.style.width = 250 + "px";
+	boxID.style.visibility = ""; // I think it's an IE hack, with hidden it does not always work.
 
 	adTitle = unescape(adTitle);
 	adText = unescape(adText);
 
-	boxID.style.left = getRealLeft(linkID) + 5 + 'px';
+	boxID.style.left = getRealLeft(linkID) + 5 + "px";
 	// put it on the bottom
-	boxID.style.top = getRealTop(linkID) + 20 + 'px';
+	boxID.style.top = getRealTop(linkID) + 20 + "px";
 
 	humanURL = unescape(adURL.replace(/.*url=(.*)/, "$1"));
 	humanURL = humanURL.replace(/http:\/\/([a-z0-9\.\-]*).*/i, "$1");
 
-	tmp_html = '<table style="color:#0;cursor:pointer;font-family:verdana;font-size:8pt;width:100%;" onmousemove="resetTimeout();" onmouseover="resetTimeout();" cellpadding="0" cellspacing="0" border="0" width="100%">';
-	tmp_html += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2"><strong style="color : #0000ff; text-decoration : underline;">' + adTitle + '</strong></td></tr>';
-	tmp_html += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2">' ;
+	tmpHtml = '<table style="color:#0;cursor:pointer;font-family:verdana;font-size:8pt;width:100%;" onmousemove="resetTimeout();" onmouseover="resetTimeout();" onmouseout="startTimeout(1000);" cellpadding="0" cellspacing="0" border="0" width="100%">';
+	tmpHtml += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2"><strong style="color : #0000ff; text-decoration : underline;">' + adTitle + '</strong></td></tr>';
+	tmpHtml += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2">' ;
 	if(adPicture !== null) {
-		tmp_html += '<img src="' + adPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
+		tmpHtml += '<img src="' + adPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
 	}
-	tmp_html += adText + '</td></tr>';
-	tmp_html += '<tr><td style="color:#008000;font-size : 7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/McLion/2linesads\')"><br />What is this?<img src="' + server_url + '/cv.php?id=' + userID + '&adword=' + encodeURI(adWord) + '" width="1" height="1" border="0" />';
-	tmp_html += '</td></tr>';
-	tmp_html += '</table>';
+	tmpHtml += adText + "</td></tr>";
+	tmpHtml += '<tr><td style="color:#008000;font-size : 7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + serverUrl + '/cv.php?id=' + userID + '&adword=' + encodeURI(adWord) + '" width="1" height="1" border="0" />';
+	tmpHtml += "</td></tr>";
+	tmpHtml += "</table>";
 
-	boxID.innerHTML = tmp_html;
+	boxID.innerHTML = tmpHtml;
 }
 
+function addTheBox(divId) {
+  // create a new div element
+  // and give it some content
+  var newDiv = document.createElement("div");
+  newDiv.id = "adBox";
+  newDiv.onmouseout = startTimeout(1000);
+  newDiv.oncontextmenu = false;
+  newDiv.onmouseover = resetTimeout();
+  newDiv.style["-moz-opacity"] = 0.95;
+  newDiv.style["background-color"] = "#ebf1f4";
+  newDiv.style["border-color"] = "#dddddd";
+  newDiv.style["border-style"] = "solid";
+  newDiv.style["border-width"] = "2px";
+  newDiv.style["filter"] = "alpha(opacity=95)";
+  newDiv.style["opacity"] = 0.95;
+  newDiv.style["position"] = "absolute";
+  newDiv.style["visibility"] = "hidden";
+
+
+  //var newContent = document.createTextNode('');
+  //newDiv.appendChild(newContent); //add the text node to the newly created div.
+ 
+  // add the newly created element and it's content into the DOM
+  myDiv = document.getElementById(divId);
+  document.body.insertBefore(newDiv, myDiv);
+}
+
+
 function init() {
+	addTheBox("2linesads"); // initialize box
+	
 	var data = getPhrases();
 	if (window.JSON && window.JSON.parse) {
         data = window.JSON.parse(data);
         searchPhrases(data);
 	} else {
-		// We have no JSON, so we won't display any ads
+		return false; // We have no JSON, so we won't display any ads
 	}
 }
 
 /* Here it starts ... */
 
-// Create AJAX object
-var http = createRequestObject();
+
+var http = createRequestObject(); // Create AJAX object
 
 
-var m_ID; // timeout id
-var tmp_count = 0; // temp counter
-//var basket = new Array();
+var mID; // timeout id
+var tmpCount = 0; // temp counter
 var basket = []; // better than new Array();
 
-init();
 
-document.write('<span id="addbox" onmouseout="startTimeout(1000);"  oncontextmenu="return false;" onmouseover="resetTimeout();" style="-moz-opacity : 0.95; background-color : #ebf1f4; border-color : #dddddd; border-style : solid; border-width : 2px; filter : alpha(opacity=95); opacity : 0.95; position : absolute;visibility : hidden;"></span>');
+
+
+//document.write('<span id="adBox" onmouseout="startTimeout(1000);"  oncontextmenu="return false;" onmouseover="resetTimeout();" style="-moz-opacity : 0.95; background-color : #ebf1f4; border-color : #dddddd; border-style : solid; border-width : 2px; filter : alpha(opacity=95); opacity : 0.95; position : absolute;visibility : hidden;"></span>');
+
+init();

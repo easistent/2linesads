@@ -22,6 +22,22 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
 	<div class="footer">That's all folks ...</div>
 </div>
-<script type="text/javascript" src="2linesads.js" id="2linesads"></script>
+<script type="text/javascript" id="2linesads">
+// Tnx Emil Stenström for the Lazy loading code - http://friendlybit.com/js/lazy-loading-asyncronous-javascript/
+(function() {
+function async_load(){
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "2linesads.js";
+    var x = document.getElementById("2linesads");
+    x.parentNode.insertBefore(s, x);
+}
+if (window.attachEvent)
+    window.attachEvent('onload', async_load);
+else
+    window.addEventListener('load', async_load, false);
+})(); 
+</script> 
 </body>
 </html>

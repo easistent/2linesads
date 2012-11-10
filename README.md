@@ -24,7 +24,23 @@ Installation
 3. In the part of the page you want to insert the ads, put a div with the id "body_content", so the javascript will know where to look.
 4. At the end of your HTML, before the body, put this code:
 ```
-<script type="text/javascript" src="URL OF SERVER/2linesads.js" id="2linesads"></script>
+<script type="text/javascript" id="2linesads">
+// Tnx Emil Stenström for the Lazy loading code - http://friendlybit.com/js/lazy-loading-asyncronous-javascript/
+(function() {
+function async_load(){
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "2linesads.js";
+    var x = document.getElementById("2linesads");
+    x.parentNode.insertBefore(s, x);
+}
+if (window.attachEvent)
+    window.attachEvent('onload', async_load);
+else
+    window.addEventListener('load', async_load, false);
+})(); 
+</script> 
 ```
 
 Look at the demo.html file for an example. Also there is a **[live demo](http://mclion.tuinzdaj.net/2linesads/demo.html "live demo")** available.
@@ -51,14 +67,20 @@ You can view the stats in SITE_URL/admin/ or in your database. An example of the
 Considerations
 --------------
 
-This was written in 2006, in another time, as to speak. It's not good code, especially the javascript bit, because at at least two points is not async, so it could stop the rendering of the page or any other javascript action.
+This was written in 2006, in another time, as to speak. It's not good code, especially the javascript bit, because at at least one point is not asynchronous, so it could stop the rendering of the page or any other javascript action.
 
 Also the code is not enclosed and uses global variables, so be warned. 
 
-Oh, another thing. The Admin is not secured in any way. At the moment is only a view stats thing anyway. If you don't want others to see the view and click stats you'll have to secure it with .htacces or in some other way.
+Oh, another thing. The Admin is not secured in any way. At the moment is only a view stats thing anyway. If you don't want others to see the view and click stats you'll have to secure it with .htaccess or in some other way.
 
 
 I will rewrite it if there will be enough interest or you can do it yourself. The fork button is up there. :)
 
 
-_http://twitter.com/mclion_
+## Contacts
+
+If you have any questions, you can contact me here:
+
+* http://twitter.com/mclion
+* http://google.com/profiles/mclion
+* http://www.linkedin.com/in/mclion
