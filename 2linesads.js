@@ -8,13 +8,13 @@
  *
  *
  * @author    Marko Milost <mclion@gmail.com>
- * @copyright (c) 2006-2012 by Marko Milost / mclion
+ * @copyright (c) 2006-2012 by Marko Milost / McLion
  * @license   http://opensource.org/licenses/mit-license.php MIT
- * @version 0.2
+ * @version 0.3
  */
 
 // URL of the installation
-var server_url = 'http://mclion.tuinzdaj.net/2linesads/';
+var server_url = 'http://McLion.tuinzdaj.net/2linesads/';
 
 /**
  * Util functions
@@ -133,7 +133,7 @@ function highlightSearchTerms(searchText, bannerTitle, bannerDesc, bannerURL, ba
 			var searchLoop = searchText.split('|');
 			for(var xx = 0; xx < searchLoop.length; xx++) {
 				addboxID = 'addboxT_' + encodeURI(searchLoop[xx].toLowerCase());
-				highlightStartTag = '<img src="' + server_url + 'cs.php?id=' + userID + '&addWord=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + addboxID + '" onmouseover="dotxtad(\'' + addboxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
+				highlightStartTag = '<img src="' + server_url + 'cs.php?id=' + userID + '&adWord=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + addboxID + '" onmouseover="dotxtad(\'' + addboxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
 				bodyText = doHighlight(bodyText, searchLoop[xx], highlightStartTag, highlightEndTag, userID);
 			}
 		} else {
@@ -160,9 +160,9 @@ function searchPhrases(searchArray) {
 }
 
 // This "draws" the ad
-function dotxtad(addID, addPicture, addTitle, addText, addURL, addWord, userID) {
+function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
 	// create DIV
-	var linkID = document.getElementById(addID);
+	var linkID = document.getElementById(adID);
 	var boxID = document.getElementById('addbox');
 	var humanURL, tmp_html;
 
@@ -171,24 +171,24 @@ function dotxtad(addID, addPicture, addTitle, addText, addURL, addWord, userID) 
 	boxID.style.width = 250 + 'px';
 	boxID.style.visibility = '';
 
-	addTitle = unescape(addTitle);
-	addText = unescape(addText);
+	adTitle = unescape(adTitle);
+	adText = unescape(adText);
 
 	boxID.style.left = getRealLeft(linkID) + 5 + 'px';
 	// put it on the bottom
 	boxID.style.top = getRealTop(linkID) + 20 + 'px';
 
-	humanURL = unescape(addURL.replace(/.*url=(.*)/, "$1"));
+	humanURL = unescape(adURL.replace(/.*url=(.*)/, "$1"));
 	humanURL = humanURL.replace(/http:\/\/([a-z0-9\.\-]*).*/i, "$1");
 
 	tmp_html = '<table style="color:#0;cursor:pointer;font-family:verdana;font-size:8pt;width:100%;" onmousemove="resetTimeout();" onmouseover="resetTimeout();" cellpadding="0" cellspacing="0" border="0" width="100%">';
-	tmp_html += '<tr onclick="window.open(\'' + addURL + '\');"><td colspan="2"><strong style="color : #0000ff; text-decoration : underline;">' + addTitle + '</strong></td></tr>';
-	tmp_html += '<tr onclick="window.open(\'' + addURL + '\');"><td colspan="2">' ;
-	if(addPicture !== null) {
-		tmp_html += '<img src="' + addPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
+	tmp_html += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2"><strong style="color : #0000ff; text-decoration : underline;">' + adTitle + '</strong></td></tr>';
+	tmp_html += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2">' ;
+	if(adPicture !== null) {
+		tmp_html += '<img src="' + adPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
 	}
-	tmp_html += addText + '</td></tr>';
-	tmp_html += '<tr><td style="color:#008000;font-size : 7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + server_url + '/cv.php?id=' + userID + '&addWord=' + encodeURI(addWord) + '" width="1" height="1" border="0" />';
+	tmp_html += adText + '</td></tr>';
+	tmp_html += '<tr><td style="color:#008000;font-size : 7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/McLion/2linesads\')"><br />What is this?<img src="' + server_url + '/cv.php?id=' + userID + '&adword=' + encodeURI(adWord) + '" width="1" height="1" border="0" />';
 	tmp_html += '</td></tr>';
 	tmp_html += '</table>';
 

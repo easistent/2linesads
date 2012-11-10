@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `2linesads` (
   `description` varchar(250) COLLATE utf8_slovenian_ci NOT NULL,
   `url` varchar(250) COLLATE utf8_slovenian_ci NOT NULL,
   `picture` varchar(120) COLLATE utf8_slovenian_ci NOT NULL,
-  `keyword` text COLLATE utf8_slovenian_ci NOT NULL,
+  `keywords` text COLLATE utf8_slovenian_ci NOT NULL,
   `campaign_start` date NOT NULL,
   `campaign_end` date NOT NULL,
   `ad_clicks` int(11) NOT NULL,

@@ -9,9 +9,9 @@
  *
  *
  * @author    Marko Milost <mclion@gmail.com>
- * @copyright (c) 2006-2012 by Marko Milost / mclion
+ * @copyright (c) 2006-2012 by Marko Milost / McLion
  * @license   http://opensource.org/licenses/mit-license.php MIT
- * @version 0.2
+ * @version 0.3
  */
 
 require_once 'libs/init.php';
@@ -20,7 +20,7 @@ header("Content-type: image/gif");
 if (!isset($_COOKIE[COOKIE_NAME])) {
     setcookie(COOKIE_NAME, uniqid('', 1), $_SERVER["REQUEST_TIME"] + 86400);
 }
-if (!check_ip($_SERVER['REMOTE_ADDR'], $_COOKIE[COOKIE_NAME], $_GET['id'], $_SERVER["REQUEST_TIME"], 1800, 'view', $_GET['addWord'])) {
+if (!check_ip($_SERVER['REMOTE_ADDR'], $_COOKIE[COOKIE_NAME], $_GET['id'], $_SERVER["REQUEST_TIME"], 1800, 'view', $_GET['adword'])) {
     $db->query("UPDATE 2linesads
 	   			     SET `views`=`views` + 1
 					 WHERE `id` = $_GET[id]") or die('err:' . $db->error);

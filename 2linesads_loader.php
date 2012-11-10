@@ -9,16 +9,16 @@
  *
  *
  * @author    Marko Milost <mclion@gmail.com>
- * @copyright (c) 2006-2012 by Marko Milost / mclion
+ * @copyright (c) 2006-2012 by Marko Milost / McLion
  * @license   http://opensource.org/licenses/mit-license.php MIT
- * @version 0.2
+ * @version 0.3
  */
 
 require_once('libs/init.php');
 
 $todaydate = date('Y-m-d').' 00:00:00'; // for the mysql cache
 
-$result = $db->query("SELECT `keyword`,`title`, `description`,`url`,`id`,`picture`
+$result = $db->query("SELECT `keywords`,`title`, `description`,`url`,`id`,`picture`
 						FROM 2linesads
 						WHERE user_id = 1
                         AND campaign_start <= NOW()
@@ -36,7 +36,7 @@ $outarray = array();
 
 while ($row = $result -> fetch_array(MYSQLI_ASSOC)) { 
     $outarray[] = array(
-	    'keywords' => $row['keyword'],
+	    'keywords' => $row['keywords'],
 	    'title' => addslashes($row['title']),
 	    'picture' => addslashes($row['picture']),
 	    'description' => addslashes($row['description']),

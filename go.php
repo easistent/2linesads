@@ -9,9 +9,9 @@
  *
  *
  * @author    Marko Milost <mclion@gmail.com>
- * @copyright (c) 2006-2012 by Marko Milost / mclion
+ * @copyright (c) 2006-2012 by Marko Milost / McLion
  * @license   http://opensource.org/licenses/mit-license.php MIT
- * @version 0.2
+ * @version 0.3
  */
 
 require_once 'libs/init.php';

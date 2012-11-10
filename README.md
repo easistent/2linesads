@@ -61,4 +61,4 @@ Oh, another thing. The Admin is not secured in any way. At the moment is only a 
 I will rewrite it if there will be enough interest or you can do it yourself. The fork button is up there. :)
 
 
-_McLion_
+_http://twitter.com/mclion_
