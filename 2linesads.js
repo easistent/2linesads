@@ -175,8 +175,8 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
 	adText = unescape(adText);
 
 	boxID.style.left = getRealLeft(linkID) + 5 + "px";
-	// put it on the bottom
-	boxID.style.top = getRealTop(linkID) + 20 + "px";
+
+	boxID.style.top = getRealTop(linkID) + 20 + "px"; // put it on the bottom
 
 	humanURL = unescape(adURL.replace(/.*url=(.*)/, "$1"));
 	humanURL = humanURL.replace(/http:\/\/([a-z0-9\.\-]*).*/i, "$1");
@@ -196,8 +196,6 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
 }
 
 function addTheBox(divId) {
-  // create a new div element
-  // and give it some content
   var newDiv = document.createElement("div");
   newDiv.id = "adBox";
   newDiv.onmouseout = startTimeout(1000);
@@ -213,11 +211,6 @@ function addTheBox(divId) {
   newDiv.style["position"] = "absolute";
   newDiv.style["visibility"] = "hidden";
 
-
-  //var newContent = document.createTextNode('');
-  //newDiv.appendChild(newContent); //add the text node to the newly created div.
- 
-  // add the newly created element and it's content into the DOM
   myDiv = document.getElementById(divId);
   document.body.insertBefore(newDiv, myDiv);
 }
@@ -236,8 +229,6 @@ function init() {
 }
 
 /* Here it starts ... */
-
-
 var http = createRequestObject(); // Create AJAX object
 
 
@@ -245,9 +236,5 @@ var mID; // timeout id
 var tmpCount = 0; // temp counter
 var basket = []; // better than new Array();
 
-
-
-
-//document.write('<span id="adBox" onmouseout="startTimeout(1000);"  oncontextmenu="return false;" onmouseover="resetTimeout();" style="-moz-opacity : 0.95; background-color : #ebf1f4; border-color : #dddddd; border-style : solid; border-width : 2px; filter : alpha(opacity=95); opacity : 0.95; position : absolute;visibility : hidden;"></span>');
 
 init();
