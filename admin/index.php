@@ -65,7 +65,7 @@ if (!empty($app)) {
         echo '<td>';
         echo str_replace('|', ', ', $row['keyword']);
         echo '</td>';
-        echo '<td>' . $row['show'] . '</td>';
+        echo '<td>' . $row['shows'] . '</td>';
         echo '<td>' . $row['views'] . '</td>';
         echo '<td>' . $row['clicks'] . '</td>';
         

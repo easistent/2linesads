@@ -37,10 +37,14 @@ CREATE TABLE IF NOT EXISTS `2linesads` (
   `campaign_start` date NOT NULL,
   `campaign_end` date NOT NULL,
   `ad_clicks` int(11) NOT NULL,
+  `shows` int(10) unsigned NOT NULL,
   `views` int(11) NOT NULL,
   `clicks` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `campaign_start` (`campaign_start`),
+  KEY `campaign_end` (`campaign_end`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci AUTO_INCREMENT=3 ;
+
 
 --
 -- Dumping data for table `2linesads`
