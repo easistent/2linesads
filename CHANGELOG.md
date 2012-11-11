@@ -20,4 +20,5 @@ CHANGELOG
 	* Fixed a CSS properity so ads work in Firefox and Opera again
 	* Removed 1px images for counting
 	* Added ajax views counting
+	* Added counter for keywod displays
 	
