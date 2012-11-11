@@ -69,8 +69,6 @@ Considerations
 
 This was written in 2006, in another time, as to speak. It's not good code, especially the javascript bit, because at at least one point is not asynchronous, so it could stop the rendering of the page or any other javascript action.
 
-Also the code is not enclosed and uses global variables, so be warned. 
-
 Oh, another thing. The Admin is not secured in any way. At the moment is only a view stats thing anyway. If you don't want others to see the view and click stats you'll have to secure it with .htaccess or in some other way.
 
 

@@ -11,7 +11,6 @@
  * @author    Marko Milost <mclion@gmail.com>
  * @copyright (c) 2006-2012 by Marko Milost / McLion
  * @license   http://opensource.org/licenses/mit-license.php MIT
- * @version 0.3
  */
 
 header('P3P: CP="NOI NID PSD OUR IND UNI"');

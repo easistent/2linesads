@@ -10,7 +10,6 @@
  * @author    Marko Milost <mclion@gmail.com>
  * @copyright (c) 2006-2012 by Marko Milost / McLion
  * @license   http://opensource.org/licenses/mit-license.php MIT
- * @version 0.3
  */
 
 // URL of the installation
@@ -181,14 +180,15 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
 	humanURL = unescape(adURL.replace(/.*url=(.*)/, "$1"));
 	humanURL = humanURL.replace(/http:\/\/([a-z0-9\.\-]*).*/i, "$1");
 
-	tmpHtml = '<table style="color:#0;cursor:pointer;font-family:verdana;font-size:8pt;width:100%;" onmousemove="resetTimeout();" onmouseover="resetTimeout();" onmouseout="startTimeout(1000);" cellpadding="0" cellspacing="0" border="0" width="100%">';
+	tmpHtml = '<table style="color:#000000;cursor:pointer;font-family:verdana;font-size:8pt;width:100%;" onmousemove="resetTimeout();" onmouseover="resetTimeout();" onmouseout="startTimeout(1000);" cellpadding="0" cellspacing="0" border="0" width="100%">';
 	tmpHtml += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2"><strong style="color : #0000ff; text-decoration : underline;">' + adTitle + '</strong></td></tr>';
 	tmpHtml += '<tr onclick="window.open(\'' + adURL + '\');"><td colspan="2">' ;
-	if(adPicture !== null) {
+
+	if(adPicture !== null && adPicture !== false && adPicture !== "") {
 		tmpHtml += '<img src="' + adPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
 	}
 	tmpHtml += adText + "</td></tr>";
-	tmpHtml += '<tr><td style="color:#008000;font-size : 7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + serverUrl + '/cv.php?id=' + userID + '&adword=' + encodeURI(adWord) + '" width="1" height="1" border="0" />';
+	tmpHtml += '<tr><td style="color:#008000;font-size:7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + serverUrl + '/cv.php?id=' + userID + '&adword=' + encodeURI(adWord) + '" width="1" height="1" border="0" />';
 	tmpHtml += "</td></tr>";
 	tmpHtml += "</table>";
 
@@ -203,12 +203,19 @@ function addTheBox(divId) {
   newDiv.onmouseover = resetTimeout();
   newDiv.style["-moz-opacity"] = 0.95;
   newDiv.style["background-color"] = "#ebf1f4";
+  newDiv.style.backgroundColor = "#ebf1f4";
   newDiv.style["border-color"] = "#dddddd";
+  newDiv.style.borderColor = "#dddddd";
+  newDiv.style.padding = "2px";
+  
+  
   newDiv.style["border-style"] = "solid";
   newDiv.style["border-width"] = "2px";
   newDiv.style["filter"] = "alpha(opacity=95)";
   newDiv.style["opacity"] = 0.95;
   newDiv.style["position"] = "absolute";
+  newDiv.style["z-index"] = 1000000;
+  
   newDiv.style["visibility"] = "hidden";
 
   myDiv = document.getElementById(divId);
