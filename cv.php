@@ -16,18 +16,11 @@
 require_once 'libs/init.php';
 require_once BASEDIR . '/libs/functions.php';
 
-header('Content-Type: image/gif');
-header('Expires: Wed, 11 Nov 1998 11:11:11 GMT');
-header('Cache-Control: no-cache');
-header('Cache-Control: must-revalidate');
-
 if (!isset($_COOKIE[COOKIE_NAME])) {
     setcookie(COOKIE_NAME, uniqid('', 1), $_SERVER["REQUEST_TIME"] + 86400);
 }
 if (!check_ip($_SERVER['REMOTE_ADDR'], $_COOKIE[COOKIE_NAME], $_GET['id'], $_SERVER["REQUEST_TIME"], 1800, 'view', $_GET['adword'])) {
     $db->query("UPDATE 2linesads
-	   			     SET `views`=`views` + 1
-					 WHERE `id` = $_GET[id]") or die('err:' . $db->error);
+    			SET `views`=`views` + 1
+    			WHERE `id` = $_GET[id]") or die('err:' . $db->error);
 }
-// empty image
-echo base64_decode('R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');

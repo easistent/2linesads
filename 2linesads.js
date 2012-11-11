@@ -31,13 +31,19 @@ function createRequestObject() {
 
 // Send request
 function getPhrases() {
-    http.open('GET', serverUrl + '2linesads_loader.php', false);
+    http.open("GET", serverUrl + "2linesads_loader.php", false);
     http.send();
     if(http.readyState == 4 && http.status == 200) {
 			return http.responseText;
 	}
    
 }
+
+function addCounter(ctype, userID, adword) {
+	http.open("GET", serverUrl + ctype + ".php?id=" + userID + "&adword=" + adword, true);
+	http.send();
+}
+
 
 function getRealTop(oElement) {
 	var iReturnValue = 0;
@@ -132,8 +138,10 @@ function highlightSearchTerms(searchText, bannerTitle, bannerDesc, bannerURL, ba
 			var searchLoop = searchText.split("|");
 			for(var xx = 0; xx < searchLoop.length; xx++) {
 				adBoxID = "adBoxT_" + encodeURI(searchLoop[xx].toLowerCase());
-				highlightStartTag = '<img src="' + serverUrl + 'cs.php?id=' + userID + '&adWord=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
+				//highlightStartTag = '<img src="' + serverUrl + 'cs.php?id=' + userID + '&adword=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
+				highlightStartTag = '<span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
 				bodyText = doHighlight(bodyText, searchLoop[xx], highlightStartTag, highlightEndTag, userID);
+				addCounter("cs",userID,searchLoop[xx]); // add to keywords underline counter
 			}
 		} else {
 			adBoxID = "adBoxT_" + encodeURI(searchText.toLowerCase());
@@ -159,7 +167,7 @@ function searchPhrases(searchArray) {
 }
 
 // This "draws" the ad
-function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
+function dotxtad(adID, adPicture, adTitle, adText, adURL, adword, userID) {
 	// create DIV
 	var linkID = document.getElementById(adID);
 	var boxID = document.getElementById("adBox");
@@ -188,11 +196,12 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adWord, userID) {
 		tmpHtml += '<img src="' + adPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
 	}
 	tmpHtml += adText + "</td></tr>";
-	tmpHtml += '<tr><td style="color:#008000;font-size:7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + serverUrl + '/cv.php?id=' + userID + '&adword=' + encodeURI(adWord) + '" width="1" height="1" border="0" />';
+	//tmpHtml += '<tr><td style="color:#008000;font-size:7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + serverUrl + '/cv.php?id=' + userID + '&adword=' + encodeURI(adword) + '" width="1" height="1" border="0" />';
+	tmpHtml += '<tr><td style="color:#008000;font-size:7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?';
 	tmpHtml += "</td></tr>";
 	tmpHtml += "</table>";
-
 	boxID.innerHTML = tmpHtml;
+	addCounter("cv", userID, adword); // add to adviews counter
 }
 
 function addTheBox(divId) {
