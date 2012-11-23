@@ -19,6 +19,17 @@ var serverUrl = "http://mclion.tuinzdaj.net/2linesads/";
  * Util functions
  */
 
+// Doing styles this way because of the pseudo classes
+function addCss(sel, css) {
+    styl = document.styleSheets[document.styleSheets.length - 1];
+    var r =(styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
+    if (styl.insertRule) {
+		styl.insertRule(sel + '{' + css + '}', r.length);
+    } else if (styl.addRule) {
+		styl.addRule(sel, css, r.length);
+    }
+}
+
 // Init AJAX
 function createRequestObject() {
 	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -138,7 +149,6 @@ function highlightSearchTerms(searchText, bannerTitle, bannerDesc, bannerURL, ba
 			var searchLoop = searchText.split("|");
 			for(var xx = 0; xx < searchLoop.length; xx++) {
 				adBoxID = "adBoxT_" + encodeURI(searchLoop[xx].toLowerCase());
-				//highlightStartTag = '<img src="' + serverUrl + 'cs.php?id=' + userID + '&adword=' + encodeURI(searchLoop[xx]) + '" width="1" height="1" border="0" /><span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
 				highlightStartTag = '<span id="' + adBoxID + '" onmouseover="dotxtad(\'' + adBoxID + '\',\'' + bannerPicture + '\',\'' + bannerTitle + '\',\'' + bannerDesc + '\',\'' + bannerURL + '\',\'' + searchLoop[xx] + '\',\'' + userID + '\');" onclick="window.open(\'' + bannerURL + '\');" oncontextmenu="return false;" onmouseout="startTimeout(1000);"  style="border-bottom-color : #008000; border-bottom-style : double; border-bottom-width : 3px; cursor : pointer;" href="' + bannerURL + '" target="_blank">';
 				bodyText = doHighlight(bodyText, searchLoop[xx], highlightStartTag, highlightEndTag, userID);
 				addCounter("cs",userID,searchLoop[xx]); // add to keywords underline counter
@@ -176,14 +186,14 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adword, userID) {
 	boxID.style.left = 10 + "px";
 	boxID.style.top = 10 + "px";
 	boxID.style.width = 250 + "px";
-	boxID.style.visibility = ""; // I think it's an IE hack, with hidden it does not always work.
+	boxID.style.visibility = ""; // I think it's an old IE hack, with hidden it does not always work.
 
 	adTitle = unescape(adTitle);
 	adText = unescape(adText);
 
-	boxID.style.left = getRealLeft(linkID) + 5 + "px";
+	boxID.style.left = getRealLeft(linkID) - 5 + "px";
 
-	boxID.style.top = getRealTop(linkID) + 20 + "px"; // put it on the bottom
+	boxID.style.top = getRealTop(linkID) + 33 + "px"; // put it on the bottom
 
 	humanURL = unescape(adURL.replace(/.*url=(.*)/, "$1"));
 	humanURL = humanURL.replace(/http:\/\/([a-z0-9\.\-]*).*/i, "$1");
@@ -196,7 +206,6 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adword, userID) {
 		tmpHtml += '<img src="' + adPicture + '" width="80" height="80" style="float:right; padding:2px;" />';
 	}
 	tmpHtml += adText + "</td></tr>";
-	//tmpHtml += '<tr><td style="color:#008000;font-size:7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?<img src="' + serverUrl + '/cv.php?id=' + userID + '&adword=' + encodeURI(adword) + '" width="1" height="1" border="0" />';
 	tmpHtml += '<tr><td style="color:#008000;font-size:7pt;"><br /><strong>' + humanURL + '</strong></td><td style="color:blue;cursor:pointer;font-size:7pt;text-align:right;" onclick="window.open(\'https://github.com/mclion/2linesads\')"><br />What is this?';
 	tmpHtml += "</td></tr>";
 	tmpHtml += "</table>";
@@ -205,30 +214,25 @@ function dotxtad(adID, adPicture, adTitle, adText, adURL, adword, userID) {
 }
 
 function addTheBox(divId) {
-  var newDiv = document.createElement("div");
-  newDiv.id = "adBox";
-  newDiv.onmouseout = startTimeout(1000);
-  newDiv.oncontextmenu = false;
-  newDiv.onmouseover = resetTimeout();
-  newDiv.style["-moz-opacity"] = 0.95;
-  newDiv.style["background-color"] = "#ebf1f4";
-  newDiv.style.backgroundColor = "#ebf1f4";
-  newDiv.style["border-color"] = "#dddddd";
-  newDiv.style.borderColor = "#dddddd";
-  newDiv.style.padding = "2px";
-  
-  
-  newDiv.style["border-style"] = "solid";
-  newDiv.style["border-width"] = "2px";
-  newDiv.style["filter"] = "alpha(opacity=95)";
-  newDiv.style["opacity"] = 0.95;
-  newDiv.style["position"] = "absolute";
-  newDiv.style["z-index"] = 1000000;
-  
-  newDiv.style["visibility"] = "hidden";
+	var newDiv = document.createElement("div");
+	newDiv.id = "adBox";
+	newDiv.onmouseout = startTimeout(1000);
+	newDiv.oncontextmenu = false;
+	newDiv.onmouseover = resetTimeout();
 
-  myDiv = document.getElementById(divId);
-  document.body.insertBefore(newDiv, myDiv);
+	newDiv.style["visibility"] = "hidden";
+
+	myDiv = document.getElementById(divId);
+	document.body.insertBefore(newDiv, myDiv);
+
+	addCss('#adBox','position:absolute;padding:8px;color:#333;background:#ebf1f4;border:2px solid #fff;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-moz-box-shadow: 3px 3px 4px #ccc;-webkit-box-shadow: 3px 3px 4px #ccc;box-shadow: 3px 3px 4px #ccc;-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color=\'#ccc000\')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color=\'#ccc000\');-moz-opacity:0.95;opacity:0.95;filter:alpha(opacity=95);z-index:1000000;');
+
+	// arrow
+	addCss('#adBox:after','content:"";position:absolute;border-top:20px solid transparent;border-left: 20px solid #ebf1f4;top:-20px;left:15px;display:block;width:0;');
+
+	// shadow of the arrow
+	addCss('#adBox:before','content:"";position:absolute;border-top:22px solid transparent;border-left: 24px solid #fff;top:-22px;left:13px;display:block;width:0;');
+
 }
 
 

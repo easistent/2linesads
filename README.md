@@ -1,13 +1,13 @@
 2linesAds
 ===============
-### Simple and crude text adds system written in PHP and JavaScript
+### Simple (non)intrusive text adds system written in PHP and JavaScript
 
 
-This is a simple ads system, that searches articles for keywords and puts interactive ads in them. 
+This is a simple ads system, that searches articles for keywords and puts interactive ads in them. Ads are a combination of Google Adsense and graphical ads that is not intrusive for the user but generates many views and clicks on related content.
 
 You can see how it looks here in the image below:
 
-![How it looks](http://i438.photobucket.com/albums/qq103/mmclion/2linesads_demo.png)
+![How it looks](http://i438.photobucket.com/albums/qq103/mmclion/2linesads.jpg)
 
 
 I wrote this in 2006, used it on a production site for about two years then forgot about it. I've found the code in an old backup of a backup and decided to open-source it under the MIT license. The code is mostly the same as I wrote in 2006, with some comments added and some debug code deleted. I did only one upgrade. The old code had an ugly hack to pass data from the database via PHP to the javascript. I've replaced it with JSON, even if it's not supported until IE8, but nowadays it should not be a problem, as it was in 2006.
