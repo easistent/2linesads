@@ -22,3 +22,6 @@ CHANGELOG
 	* Added ajax views counting
 	* Added counter for keywod displays
 	
+* 2012-11-23
+	* New design for the ad with a new approach to styles
+	
