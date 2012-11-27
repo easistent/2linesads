@@ -44,6 +44,10 @@ function addCss(sel, css) {
 
 }
 
+// Nice touch device test from http://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+function isTouchDevice() {
+  return !!('ontouchstart' in window) || !!('onmsgesturechange' in window);
+}
 
 // Init AJAX
 function createRequestObject() {

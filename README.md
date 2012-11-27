@@ -77,8 +77,12 @@ I will rewrite it if there will be enough interest or you can do it yourself. Th
 
 ## Contacts
 
-If you have any questions, you can contact me here:
+Follow/contact me:
 
 * http://twitter.com/mclion
 * http://google.com/profiles/mclion
 * http://www.linkedin.com/in/mclion
+
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/aa86483f1d8371005573cbe9aced5f9d "githalytics.com")](http://githalytics.com/mclion/2linesads)
+
