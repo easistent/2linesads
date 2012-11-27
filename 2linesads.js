@@ -21,13 +21,32 @@ var serverUrl = "http://mclion.tuinzdaj.net/2linesads/";
 
 // Doing styles this way because of the pseudo classes
 function addCss(sel, css) {
-    styl = document.styleSheets[document.styleSheets.length - 1];
-    var r =(styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
+	try {
+		// this breaks in Opera/FF if HTML has external CSS rules
+		styl = document.styleSheets[document.styleSheets.length - 1];
+		r = (styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
+	} catch(e) {
+		// So we don't have local CSS, let's create one
+		var head = document.getElementsByTagName('head')[0];
+		var s = document.createElement('style');
+		s.setAttribute('type', 'text/css');
+		head.appendChild(s);
+
+		styl = document.styleSheets[document.styleSheets.length - 1];
+		r = (styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
+	}
+
     if (styl.insertRule) {
 		styl.insertRule(sel + '{' + css + '}', r.length);
     } else if (styl.addRule) {
 		styl.addRule(sel, css, r.length);
     }
+
+}
+
+// Nice touch device test from http://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+function isTouchDevice() {
+  return !!('ontouchstart' in window) || !!('onmsgesturechange' in window);
 }
 
 // Init AJAX
@@ -38,6 +57,7 @@ function createRequestObject() {
 		return new ActiveXObject("Microsoft.XMLHTTP");
 	}
 }
+
 
 
 // Send request

@@ -25,3 +25,6 @@ CHANGELOG
 * 2012-11-23
 	* New design for the ad with a new approach to styles
 	
+
+* 2012-11-27
+	* Fixed style CSS problem with remote CSS and Firefox/Opera
