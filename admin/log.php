@@ -1,4 +1,6 @@
 <?php
+require '../libs/functions.php';
+
 $result = $db->query("SELECT *
                     FROM 2linesads_log
                     WHERE add_id = " . $_GET['id']
@@ -12,6 +14,6 @@ echo '<table class="table table-bordered table-striped">';
             <td><strong>user</strong></td>
     </tr></thead><tbody>';
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-    echo '<tr><td>' . $row['event_time'] . '</td><td>' . $row['word'] . '&nbsp;</td><td>' . $row['event_type'] . '</td><td>' . $row['ip'] . '/' . $row['cookie'] . '</td></tr>';
+    echo '<tr><td>' . $row['event_time'] . '</td><td>' . $row['word'] . '&nbsp;</td><td>' . $row['event_type'] . '</td><td>' . obfuscate_ip($row['ip']) . '/' . $row['cookie'] . '</td></tr>';
 }
 echo '</tbody></table>';

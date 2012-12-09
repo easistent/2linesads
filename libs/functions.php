@@ -50,3 +50,8 @@ function check_ip($ip, $cookie, $add_id, $event_time, $event_timeout, $event_typ
     
     }
 }
+
+function obfuscate_ip($ip) 
+{
+	return preg_replace("/([0-9]{1,3})\..*\.([0-9]{1,3})/", "$1..$2", $ip);
+}
