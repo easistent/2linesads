@@ -10,6 +10,7 @@
  * @copyright (c) 2006-2012 by Marko Milost / McLion
  */
 require '../libs/init.php';
+require '../libs/functions.php';
 
 header('Content-Type: text/html; charset=utf-8');
 ?>

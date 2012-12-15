@@ -1,5 +1,4 @@
 <?php
-require '../libs/functions.php';
 
 $result = $db->query("SELECT *
                     FROM 2linesads_log
