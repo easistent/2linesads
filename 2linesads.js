@@ -21,20 +21,18 @@ var serverUrl = "http://mclion.tuinzdaj.net/2linesads/";
 
 // Doing styles this way because of the pseudo classes
 function addCss(sel, css) {
-	try {
-		// this breaks in Opera/FF if HTML has external CSS rules
-		styl = document.styleSheets[document.styleSheets.length - 1];
-		r = (styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
-	} catch(e) {
-		// So we don't have local CSS, let's create one
+	// This has to be set
+	if (set_css === false) {
 		var head = document.getElementsByTagName('head')[0];
 		var s = document.createElement('style');
 		s.setAttribute('type', 'text/css');
 		head.appendChild(s);
 
-		styl = document.styleSheets[document.styleSheets.length - 1];
-		r = (styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
+		set_css = true;
 	}
+	
+	styl = document.styleSheets[document.styleSheets.length - 1];
+	r = (styl.cssRules !== undefined) ? styl.cssRules: styl.rules;
 
     if (styl.insertRule) {
 		styl.insertRule(sel + '{' + css + '}', r.length);
@@ -274,6 +272,6 @@ var http = createRequestObject(); // Create AJAX object
 var mID; // timeout id
 var tmpCount = 0; // temp counter
 var basket = []; // better than new Array();
-
+var set_css = false; // global for checking style creation
 
 init();
