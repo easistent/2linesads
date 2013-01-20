@@ -28,3 +28,9 @@ CHANGELOG
 
 * 2012-11-27
 	* Fixed style CSS problem with remote CSS and Firefox/Opera
+
+* 2012-12-15
+	* Started Mobile support
+
+* 2013-01-20
+	* Cleaned code with JSLint - major syntax changes
